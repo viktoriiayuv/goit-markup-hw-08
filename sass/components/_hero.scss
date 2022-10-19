@@ -1,0 +1,27 @@
+// СЕКЦІЯ HERO
+.hero {
+	text-align: center;
+	background-color: $dark-background;
+}
+.hero__overlay {
+	margin: 0 auto;
+	max-width: 1600px;
+	height: 600px;
+	padding: 200px 0;
+	background-image: linear-gradient(to right, $background-gradient, $background-gradient),
+		url("../images/hero-background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.hero__title-overlay {
+	margin: 0 auto;
+	max-width: 696px;
+}
+.hero__title {
+	margin-bottom: 30px;
+	font-weight: 900;
+	@include fontSize(44px, 1.36, 0.06em);
+	text-transform: uppercase;
+	color: $primary-white;
+}

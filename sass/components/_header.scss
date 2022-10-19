@@ -1,0 +1,65 @@
+// ХЕДЕР
+.header {
+	border-bottom: 1px solid $header-border-color;
+}
+.header__container {
+	@include centeredFlex();
+}
+// Стилі навігації в хедері
+.navigation {
+	display: flex;
+}
+// Навігація по сторінкам сайту
+.site-nav {
+	@include centeredFlex();
+}
+.site-nav__item:not(:first-child) {
+	margin-left: 50px;
+}
+.site-nav__link {
+	@extend %nav-link;
+	color: $title-text-color;
+
+	&:hover,
+	&:focus {
+		color: $accent-color;
+	}
+
+	&--current {
+		position: relative;
+		color: $accent-color;
+	}
+	&--current::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		width: 108%;
+		height: 4px;
+		background-color: $accent-color;
+		border-radius: 2px;
+		transform: translate(-4%, 0);
+	}
+}
+// Контакти в хедері
+.contact-nav {
+	display: flex;
+	margin-left: auto;
+}
+.contact-nav__item:not(:first-child) {
+	margin-left: 50px;
+}
+.contact-nav__link {
+	@include centeredFlex();
+	@extend %nav-link;
+	color: $primary-text-color;
+
+	&:hover,
+	&:focus {
+		color: $accent-color;
+	}
+}
+.contact-nav__icon {
+	margin-right: 10px;
+	fill: currentColor;
+}

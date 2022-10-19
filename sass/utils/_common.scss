@@ -1,0 +1,62 @@
+// Глобальні стилі
+body {
+	font-family: "Roboto", sans-serif;
+	color: $primary-text-color;
+	background-color: $primary-white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+// Скидання стилів
+.list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.link {
+	text-decoration: none;
+}
+.img {
+	display: block;
+}
+
+// Загальний допоміжний клас для центрування і обмеження контенту по ширині
+.container {
+	margin: 0 auto;
+	width: 1200px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+// Клас для приховування заголовків, що відсутні на макеті
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
+}
+
+//Загальні стилі секцій
+.section {
+	padding: 94px 0;
+}
+.no-top-padding {
+	padding-top: 0;
+}
+.section__title {
+	margin-bottom: 50px;
+	@include fontSize(36px, 1.17, 0.03em);
+	text-align: center;
+	color: $title-text-color;
+}

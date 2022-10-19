@@ -1,0 +1,26 @@
+// Секція Постійні клієнти
+.customers__list {
+	display: flex;
+}
+.customers__item:not(:first-child) {
+	margin-left: 30px;
+}
+.customers__link {
+	@include centeredFlex();
+	width: 170px;
+	height: 92px;
+	border: 1px solid $primary-icon-color;
+	border-radius: 4px;
+	color: $primary-icon-color;
+	transition: color $transition-time $transition-timing-function,
+		border-color $transition-time $transition-timing-function;
+
+	&:hover,
+	&:focus {
+		border-color: $accent-color;
+		color: $accent-color;
+	}
+}
+.customers__icon {
+	fill: currentColor;
+}

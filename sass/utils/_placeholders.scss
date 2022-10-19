@@ -1,0 +1,13 @@
+%nav-link {
+	padding: 32px 0;
+	@include fontSize(14px, 1.14, 0.02em);
+	font-weight: 500;
+	transition: color $transition-time $transition-timing-function;
+}
+
+%input-field {
+	@include fontSize(12px, 1.17, 0.01em);
+	border: 1px solid rgb(33 33 33 / 0.2);
+	border-radius: 4px;
+	transition: border $transition-time $transition-timing-function;
+}

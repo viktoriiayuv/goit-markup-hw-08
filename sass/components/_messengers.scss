@@ -1,0 +1,34 @@
+.messengers {
+	@include centeredFlex();
+}
+.messengers__item:not(:first-child) {
+	margin-left: 10px;
+}
+.messengers__link {
+	@include centeredFlex();
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	color: $primary-icon-color;
+	transition: color $transition-time $transition-timing-function,
+		background-color $transition-time $transition-timing-function;
+
+	&:hover,
+	&:focus {
+		background-color: $accent-color;
+		color: $primary-white;
+	}
+}
+.messengers__link--inverse {
+	background-color: rgb(255 255 255 / 0.1);
+	color: $primary-white;
+	transition: background-color $transition-time $transition-timing-function;
+
+	&:hover,
+	&:focus {
+		background-color: $accent-color;
+	}
+}
+.messengers__icon {
+	fill: currentColor;
+}
