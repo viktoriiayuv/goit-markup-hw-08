@@ -4,6 +4,9 @@
 }
 .header__container {
 	@include centeredFlex();
+	@media (max-width: 767px) {
+		justify-content: space-between;
+	}
 }
 // Стилі навігації в хедері
 .navigation {
@@ -12,12 +15,16 @@
 // Навігація по сторінкам сайту
 .site-nav {
 	@include centeredFlex();
+	@media (max-width: 767px) {
+		display: none;
+	}
 }
 .site-nav__item:not(:first-child) {
 	margin-left: 50px;
 }
 .site-nav__link {
 	@extend %nav-link;
+	padding: 32px 0;
 	color: $title-text-color;
 
 	&:hover,
@@ -45,14 +52,29 @@
 .contact-nav {
 	display: flex;
 	margin-left: auto;
+	@media (max-width: 767px) {
+		display: none;
+	}
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 .contact-nav__item:not(:first-child) {
-	margin-left: 50px;
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		margin-top: 10px;
+	}
+	@include desktop {
+		margin-left: 50px;
+	}
 }
 .contact-nav__link {
 	@include centeredFlex();
 	@extend %nav-link;
 	color: $primary-text-color;
+	@include desktop {
+		padding: 32px 0;
+	}
 
 	&:hover,
 	&:focus {

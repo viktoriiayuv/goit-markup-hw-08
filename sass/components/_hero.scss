@@ -5,23 +5,60 @@
 }
 .hero__overlay {
 	margin: 0 auto;
-	max-width: 1600px;
-	height: 600px;
-	padding: 200px 0;
+	min-width: 320px;
+	max-width: 480px;
+	padding: 118px 60px;
 	background-image: linear-gradient(to right, $background-gradient, $background-gradient),
-		url("../images/hero-background.jpg");
+		url("../images/hero-img-mobile.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+
+	@include retina {
+		background-image: linear-gradient(to right, $background-gradient, $background-gradient),
+			url("../images/hero-img-mobile@2x.jpg");
+	}
+
+	@include tablet {
+		max-width: 768px;
+		padding: 118px 204px;
+		background-image: linear-gradient(to right, $background-gradient, $background-gradient),
+			url("../images/hero-img-tablet.jpg");
+
+		@include retina {
+			background-image: linear-gradient(to right, $background-gradient, $background-gradient),
+				url("../images/hero-img-tablet@2x.jpg");
+		}
+	}
+
+	@include desktop {
+		max-width: 1600px;
+		padding: 200px 452px;
+		background-image: linear-gradient(to right, $background-gradient, $background-gradient),
+			url("../images/hero-img.jpg");
+
+		@include retina {
+			background-image: linear-gradient(to right, $background-gradient, $background-gradient),
+				url("../images/hero-img@2x.jpg");
+		}
+	}
 }
-.hero__title-overlay {
+.hero__content {
 	margin: 0 auto;
-	max-width: 696px;
+	max-width: 360px;
+
+	@include desktop {
+		max-width: 696px;
+	}
 }
 .hero__title {
 	margin-bottom: 30px;
 	font-weight: 900;
-	@include fontSize(44px, 1.36, 0.06em);
+	@include fontSize(26px, 1.62, 0.06em);
 	text-transform: uppercase;
 	color: $primary-white;
+
+	@include desktop {
+		@include fontSize(44px, 1.36, 0.06em);
+	}
 }

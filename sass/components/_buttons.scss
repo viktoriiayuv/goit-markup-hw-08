@@ -13,8 +13,8 @@
 }
 
 .button--hero-btn {
-	padding: 10px 32px;
-	min-width: 216px;
+	padding: 10px 24px;
+	min-width: 200px;
 	@include fontSize(16px, 1.88, 0.06em);
 	font-weight: 700;
 	color: $primary-white;
@@ -23,6 +23,11 @@
 	&:hover,
 	&:focus {
 		background-color: $hero-btn-active;
+	}
+
+	@include desktop {
+		padding: 10px 32px;
+		min-width: 216px;
 	}
 }
 

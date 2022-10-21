@@ -4,11 +4,25 @@
 	padding: 60px 0;
 }
 .footer__container {
-	display: flex;
-	align-items: baseline;
+	@include tablet {
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
+		align-content: center;
+	}
 }
+.footer__section {
+	@media screen and (max-width: 1199px) {
+		margin-bottom: 60px;
+		text-align: center;
+		flex-basis: 50%;
+	}
+}
+
 .footer__section:not(:first-child) {
-	margin-left: 70px;
+	@include desktop {
+		margin-left: 70px;
+	}
 }
 .footer__title {
 	margin-bottom: 20px;
@@ -18,18 +32,33 @@
 	color: $primary-white;
 }
 .footer-form {
-	margin-left: auto;
+	@media screen and (max-width: 1199px) {
+		text-align: center;
+		flex-basis: 100%;
+	}
+	@include desktop {
+		margin-left: auto;
+	}
 }
 .footer-form__input {
-	min-width: 358px;
+	width: 100%;
+	margin: 0 auto 20px auto;
 	height: 50px;
 	padding: 15px 16px;
-	margin-right: 12px;
 	background-color: transparent;
 	border: 1px solid rgb(255 255 255 / 0.3);
 	border-radius: 4px;
 	color: rgb(255 255 255 / 0.6);
-
+	@media screen and (max-width: 1199px) {
+		display: block;
+	}
+	@include tablet {
+		width: 450px;
+	}
+	@include desktop {
+		width: 358px;
+		margin-right: 12px;
+	}
 	&:focus {
 		outline: none;
 		border: 1px solid $primary-white;
@@ -42,7 +71,10 @@
 }
 
 .address__item:not(:first-child) {
-	margin-top: 9px;
+	margin-top: 8px;
+	@include desktop {
+		margin-top: 9px;
+	}
 }
 .address__link {
 	@include fontSize(14px, 1.71, 0.03em);

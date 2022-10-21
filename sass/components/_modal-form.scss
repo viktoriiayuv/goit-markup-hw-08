@@ -55,8 +55,11 @@
 	margin-bottom: 30px;
 }
 .checkbox__label {
-	@include fontSize(14px, 1.71, 0.03em);
+	@include fontSize(12px, 1.71, 0.03em);
 	color: $primary-text-color;
+	@include desktop {
+		@include fontSize(14px, 1.17, 0.03em);
+	}
 }
 .checkbox__link {
 	text-decoration-line: underline;

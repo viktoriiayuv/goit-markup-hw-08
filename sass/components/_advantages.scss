@@ -1,13 +1,39 @@
 // Секція Наші переваги
 .advantages__list {
-	display: flex;
+	@include tablet {
+		display: flex;
+	}
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		flex-wrap: wrap;
+	}
 }
 .advantages__item {
-	flex-basis: calc((100% - 90px) / 4);
+	@include tablet {
+		flex-basis: calc((100% - 30px) / 2);
+	}
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		&:not(:nth-child(2n)) {
+			margin-right: 30px;
+		}
+
+		&:not(:nth-last-child(-n + 2)) {
+			margin-bottom: 30px;
+		}
+	}
+	@include desktop {
+		flex-basis: calc((100% - 90px) / 4);
+	}
+	&:not(:first-child) {
+		@media screen and (max-width: 767px) {
+			margin-top: 30px;
+		}
+
+		@include desktop {
+			margin-left: 30px;
+		}
+	}
 }
-.advantages__item:not(:first-child) {
-	margin-left: 30px;
-}
+
 .advantages__icon {
 	@include centeredFlex();
 	height: 120px;
@@ -20,7 +46,15 @@
 	@include fontSize(14px, 1.14, 0.03em);
 	text-transform: uppercase;
 	color: $title-text-color;
+
+	@media screen and (max-width: 767px) {
+		text-align: center;
+	}
 }
 .advantages__text {
-	@include fontSize(14px, 1.71, 0.03em);
+	@include fontSize(12px, 1.71, 0.03em);
+
+	@include desktop {
+		@include fontSize(14px, 1.71, 0.03em);
+	}
 }

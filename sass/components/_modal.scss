@@ -13,8 +13,8 @@
 	left: 50%;
 	transform: translate(-50%, -50%) scale(1);
 	padding: 40px;
-	width: 528px;
-	height: 581px;
+	min-width: 290px;
+	min-height: 609px;
 	background: $primary-white;
 	box-shadow: 0px 1px 3px rgb(0 0 0 / 0.12), 0px 1px 1px rgb(0 0 0 / 0.14), 0px 2px 1px rgb(0 0 0 / 0.2);
 	border-radius: 4px;
@@ -23,13 +23,24 @@
 	transition: transform $transition-time-modal $transition-timing-function,
 		visibility $transition-time-modal $transition-timing-function,
 		opacity $transition-time-modal $transition-timing-function;
+	@include mobile {
+		width: 450px;
+		height: 609px;
+	}
+	@include desktop {
+		width: 528px;
+		height: 581px;
+	}
 }
 .modal__title {
 	margin-bottom: 12px;
 	font-weight: 700;
-	@include fontSize(20px, 1.15, 0.03em);
+	@include fontSize(20px, 1.5, 0.03em);
 	text-align: center;
 	color: $title-text-color;
+	@include desktop {
+		@include fontSize(20px, 1.15, 0.03em);
+	}
 }
 .is-hidden {
 	visibility: hidden;
@@ -54,12 +65,10 @@
 	background-color: $primary-white;
 	border: 1px solid rgb(0 0 0 / 0.1);
 	cursor: pointer;
-	transition: border-color $transition-time-modal $transition-timing-function,
-		background-color $transition-time-modal $transition-timing-function;
+	transition: color $transition-time-modal $transition-timing-function;
 
 	&:hover,
 	&:focus {
-		border: 1px solid $accent-color;
-		background-color: rgb(0 0 0 / 0.1);
+		color: $accent-color;
 	}
 }

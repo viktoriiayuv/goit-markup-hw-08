@@ -1,5 +1,4 @@
 %nav-link {
-	padding: 32px 0;
 	@include fontSize(14px, 1.14, 0.02em);
 	font-weight: 500;
 	transition: color $transition-time $transition-timing-function;

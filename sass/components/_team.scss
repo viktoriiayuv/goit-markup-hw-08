@@ -3,10 +3,12 @@
 	background-color: $light-background;
 }
 .team__list {
-	display: flex;
-}
-.team__item:not(:first-child) {
-	margin-left: 30px;
+	@include tablet {
+		display: flex;
+	}
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		flex-wrap: wrap;
+	}
 }
 .team__title {
 	margin-bottom: 10px;
@@ -19,11 +21,38 @@
 	@include fontSize(16px, 1.19, 0.03em);
 }
 .team__item {
-	flex-basis: calc((100% - 90px) / 4);
-	background-color: $primary-white;
+	@include centeredFlex;
+	flex-direction: column;
 	text-align: center;
+	background-color: $primary-white;
 	border-radius: 0px 0px 4px 4px;
 	box-shadow: 0px 1px 3px rgb(0 0 0 / 0.12), 0px 1px 1px rgb(0 0 0 / 0.14), 0px 2px 1px rgb(0 0 0 / 0.2);
+
+	@include tablet {
+		flex-basis: calc((100% - 30px) / 2);
+	}
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		&:not(:nth-child(2n)) {
+			margin-right: 30px;
+		}
+
+		&:not(:nth-last-child(-n + 2)) {
+			margin-bottom: 30px;
+		}
+	}
+
+	@include desktop {
+		flex-basis: calc((100% - 90px) / 4);
+	}
+	&:not(:first-child) {
+		@media screen and (max-width: 767px) {
+			margin-top: 30px;
+		}
+
+		@include desktop {
+			margin-left: 30px;
+		}
+	}
 }
 .team__card-info {
 	padding: 30px 0;

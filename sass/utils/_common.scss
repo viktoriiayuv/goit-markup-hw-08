@@ -14,6 +14,12 @@ p {
 	margin: 0;
 }
 
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 // Скидання стилів
 .list {
 	padding: 0;
@@ -23,16 +29,20 @@ p {
 .link {
 	text-decoration: none;
 }
-.img {
-	display: block;
-}
 
 // Загальний допоміжний клас для центрування і обмеження контенту по ширині
 .container {
 	margin: 0 auto;
-	width: 1200px;
+	min-width: 320px;
+	max-width: 480px;
 	padding-left: 15px;
 	padding-right: 15px;
+	@include tablet {
+		max-width: 768px;
+	}
+	@include desktop {
+		max-width: 1200px;
+	}
 }
 
 // Клас для приховування заголовків, що відсутні на макеті
@@ -49,14 +59,23 @@ p {
 
 //Загальні стилі секцій
 .section {
-	padding: 94px 0;
+	padding: 60px 0;
+
+	@include desktop {
+		padding: 94px 0;
+	}
 }
 .no-top-padding {
 	padding-top: 0;
 }
 .section__title {
-	margin-bottom: 50px;
-	@include fontSize(36px, 1.17, 0.03em);
+	margin-bottom: 30px;
+	@include fontSize(28px, 1.17, 0.03em);
 	text-align: center;
 	color: $title-text-color;
+
+	@include desktop {
+		margin-bottom: 50px;
+		@include fontSize(36px, 1.17, 0.03em);
+	}
 }
