@@ -4,7 +4,7 @@
 }
 .hero__overlay {
 	margin: 0 auto;
-	padding: 118px 60px;
+	padding: 118px 0;
 	background-color: $dark-background;
 	background-image: linear-gradient(to right, $background-gradient, $background-gradient),
 		url("../images/hero-img-mobile.jpg");
@@ -23,7 +23,7 @@
 	}
 
 	@include tablet {
-		padding: 118px 204px;
+		padding: 118px 0;
 		background-image: linear-gradient(to right, $background-gradient, $background-gradient),
 			url("../images/hero-img-tablet.jpg");
 
@@ -35,7 +35,7 @@
 
 	@include desktop {
 		max-width: 1600px;
-		padding: 200px 452px;
+		padding: 200px 0;
 		background-image: linear-gradient(to right, $background-gradient, $background-gradient),
 			url("../images/hero-img.jpg");
 
