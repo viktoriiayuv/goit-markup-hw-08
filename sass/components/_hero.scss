@@ -1,18 +1,21 @@
 // СЕКЦІЯ HERO
 .hero {
 	text-align: center;
-	background-color: $dark-background;
 }
 .hero__overlay {
 	margin: 0 auto;
-	min-width: 320px;
-	max-width: 480px;
 	padding: 118px 60px;
+	background-color: $dark-background;
 	background-image: linear-gradient(to right, $background-gradient, $background-gradient),
 		url("../images/hero-img-mobile.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+
+	@media screen and (max-width: 479px) {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 
 	@include retina {
 		background-image: linear-gradient(to right, $background-gradient, $background-gradient),
@@ -20,7 +23,6 @@
 	}
 
 	@include tablet {
-		max-width: 768px;
 		padding: 118px 204px;
 		background-image: linear-gradient(to right, $background-gradient, $background-gradient),
 			url("../images/hero-img-tablet.jpg");
